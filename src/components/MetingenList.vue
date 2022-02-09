@@ -10,7 +10,7 @@
           :key="index"
           @click="setActiveMeting(meting, index)"
         >
-          {{ meting.BT }}
+          {{ meting.client }}
         </li>
       </ul>
 
@@ -56,6 +56,7 @@ export default {
         let data = item.val();
         _metingen.push({
           key: key,
+          client: data.client,
           prismaflipper6m: data.prismaflipper6m,
           bt: data.bt,
           bn: data.bn,

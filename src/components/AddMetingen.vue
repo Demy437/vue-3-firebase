@@ -2,6 +2,18 @@
   <div class="submit-form">
     <div v-if="!submitted">
       <div class="form-group">
+        <label for="client">Cliënt naam</label>
+        <input
+          type="text"
+          class="form-control"
+          id="client"
+          required
+          v-model="meting.client"
+          name="client"
+        />
+      </div>
+
+      <div class="form-group">
         <label for="prismaflipper6m">Prismaflipper op 6m</label>
         <input
           type="number"
@@ -81,6 +93,7 @@ export default {
   data() {
     return {
         meting: {
+        client: "",
         prismaflipper6m: "",
         bt: "",
         bn: "",
@@ -94,6 +107,7 @@ export default {
   methods: {
     savemeting() {
       var data = {
+        client: this.meting.client,
         prismaflipper6m: this.meting.prismaflipper6m,
         bt: this.meting.bt,
         bn: this.meting.bn,
@@ -115,6 +129,7 @@ export default {
     newmeting() {
       this.submitted = false;
       this.meting = {
+        client: "",
         prismaflipper6m: "",
         bt: "",
         bn: "",

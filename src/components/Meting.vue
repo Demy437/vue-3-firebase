@@ -3,14 +3,14 @@
     <h4>Meting</h4>
     <form>
       <div class="form-group">
-        <label for="prismaflipper6m">Cliënt   </label>
+        <label for="client">Cliënt   </label>
         <input
-          type="number"
+          type="text"
           class="form-control"
-          id="prismaflipper6m"
+          id="client"
           required
-          v-model="currentMeting.prismaflipper6m"
-          name="prismaflipper6m"
+          v-model="currentMeting.client"
+          name="client"
         />
       </div>
       <div class="form-group">
@@ -53,14 +53,26 @@
       <div class="form-group">
         <label for="prismaflipper40cm">Prismaflipper40cm</label>
         <input
-          type="text"
+          type="number"
           class="form-control"
           id="prismaflipper40cm"
           required
           v-model="currentMeting.prismaflipper40cm"
           name="prismaflipper40cm"
         />
+      </div>      
+      <div class="form-group">
+        <label for="moeite">Meeste moeite met</label>
+        <input
+          type="text"
+          class="form-control"
+          id="moeite"
+          required
+          v-model="currentMeting.moeite"
+          name="moeite"
+        />
       </div>
+
     </form>
 
     <!-- <button
@@ -113,21 +125,9 @@ export default {
     },
   },
   methods: {
-    // updatePublished(status) {
-    //   MetingDataService.update(this.currentMeting.key, {
-    //     published: status,
-    //   })
-    //     .then(() => {
-    //       this.currentMeting.published = status;
-    //       this.message = "The status was updated successfully!";
-    //     })
-    //     .catch((e) => {
-    //       console.log(e);
-    //     });
-    // },
-
     updateMeting() {
       const data = {
+        client: this.meting.client,
         prismaflipper6m: this.meting.prismaflipper6m,
         bt: this.meting.bt,
         bn: this.meting.bn,
